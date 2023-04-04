@@ -83,7 +83,7 @@ class GoogleSearchAPIWrapper(BaseModel):
                 "Please install it with `pip install google-api-python-client`"
             )
 
-        service = build("customsearch", "v1", developerKey=google_api_key)
+        service = build("customsearch", "v1", developerKey=google_api_key, static_discovery=False)
         values["search_engine"] = service
 
         return values
